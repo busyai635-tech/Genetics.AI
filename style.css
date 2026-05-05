@@ -883,14 +883,14 @@ ul {
 
 .plans-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
 .plan-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    padding: 3rem;
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.05) 0%, var(--bg-surface) 100%);
+    border: 1px solid var(--accent-color);
+    padding: clamp(1.5rem, 4vw, 3rem);
     border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
@@ -902,13 +902,14 @@ ul {
 }
 
 .plan-title {
-    font-size: 1.8rem;
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
 }
 
 .plan-desc {
     color: var(--text-secondary);
+    font-size: clamp(0.85rem, 2vw, 1rem);
     margin-bottom: 2rem;
     min-height: 50px;
 }
@@ -920,10 +921,11 @@ ul {
 
 .plan-features li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.8rem;
     margin-bottom: 1rem;
     color: var(--text-secondary);
+    font-size: clamp(0.85rem, 2vw, 1rem);
 }
 
 .plan-features i {
@@ -1251,6 +1253,9 @@ footer {
         gap: 1rem;
         text-align: center;
     }
+    .plans-grid {
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1269,6 +1274,9 @@ footer {
     }
     .saas-sidebar {
         display: none;
+    }
+    .plans-grid {
+        gap: 0.8rem;
     }
     .marquee-content {
         gap: 2rem;
